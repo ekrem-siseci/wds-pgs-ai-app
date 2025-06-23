@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BolBol Tatil Hikayen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <video autoplay muted loop playsinline id="bg-video">
+  <source src="392440670933401604.mp4" type="video/mp4" />
+</video>
+
+  <main class="container">
+    <header class="hero-header">
+        <img src="pegasus-logo.svg" alt="Pegasus Logo" class="logo" />
+  <h1 class="title">Hayalindeki Tatili Keşfet</h1>
+  <p class="subtitle">Anlattıklarınla, senin için bir tatil öyküsü yazıyoruz.</p>
+  <p class="caption">Yapay zekâ destekli bu deneyimde, sana özel bir hikâye ve o hikâyeyi anlatan bir görsel hazırlanacak.</p>
+</header>
+
+
+
+    <!-- Çok adımlı form -->
+    <form id="multi-step-form">
+      <div class="step active" data-step="1">
+        <label for="name">Adın:</label>
+        <input type="text" id="name" required />
+        <button type="button" class="next-btn">Devam</button>
+      </div>
+
+      <div class="step" data-step="2">
+        <label for="vibe">Tatilini tek kelimeyle anlat:</label>
+        <input type="text" id="vibe" required placeholder="örneğin: huzur, keşif..." />
+        <button type="button" class="next-btn">Devam</button>
+      </div>
+
+      <div class="step" data-step="3">
+        <label for="company">Kiminle tatil yapmak isterdin?</label>
+        <select id="company">
+          <option value="alone">Tek başıma</option>
+          <option value="partner">Partnerimle</option>
+          <option value="family">Ailemle</option>
+          <option value="friends">Arkadaşlarımla</option>
+        </select>
+        <button type="button" class="next-btn">Devam</button>
+      </div>
+
+      <div class="step" data-step="4">
+        <label for="interest">Tatil seni en çok neden heyecanlandırır?</label>
+        <select id="interest">
+          <option value="sea">Deniz, kum, güneş</option>
+          <option value="culture">Tarih ve kültür</option>
+          <option value="nature">Doğa ve yürüyüş</option>
+          <option value="shopping">Şehir keşfi ve alışveriş</option>
+          <option value="nightlife">Gece hayatı</option>
+          <option value="calm">Sakinlik ve inziva</option>
+        </select>
+        <button type="submit">Hikayeni Oluştur</button>
+      </div>
+    </form>
+
+    <!-- LOADING ekranı -->
+    <section id="loading" class="hidden">
+      <div class="loader"></div>
+      <p style="color:#ffffff;">Hikayen hazırlanıyor...</p>
+    </section>
+
+    <!-- SONUÇ ekranı -->
+    <section id="result" class="hidden">
+      <div id="story-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tatil senin için başlı başına bir keşifti.</p>
+        <p>Şehirde kaybolurken aslında kendini buldun. Pegasus sayesinde bu deneyim mümkün oldu.</p>
+      </div>
+      <img id="story-image" src="https://via.placeholder.com/400x250.png?text=AI+Tatil+Görseli" alt="Tatil görseli" />
+      <button id="reset">Yeni Hikaye</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
